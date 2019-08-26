@@ -24,7 +24,7 @@ public class CustomUser {
     private List<UserInChat> chats;
     @OneToMany(mappedBy = "lucky")
     private List<CustomChat> luckyChats;
-    @OneToMany(mappedBy = "looser")
-    private List<CustomChat> uncluckyChats;
+    @OneToMany(mappedBy = "loser")
+    private List<CustomChat> unluckyChats;
 
 }

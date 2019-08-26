@@ -28,14 +28,14 @@ public class ChatServiceImpl implements ChatService {
     @Override
     @Transactional
     public CustomChat getById(int id) {
-        try{
+//        try{
             CustomChat chat = chatRepository.findById(id).get();
             Hibernate.initialize(chat.getUsers());
             return chat;
-        }catch (NoSuchElementException e){
-            logger.warn(e.getMessage());
-        }
-        return null;
+//        }catch (NoSuchElementException e){
+//            logger.warn(e.getMessage());
+//        }
+//        return null;
     }
 
     @Override

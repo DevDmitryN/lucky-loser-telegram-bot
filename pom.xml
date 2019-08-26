@@ -17,6 +17,8 @@
     <properties>
         <java.version>11</java.version>
         <telegrambots.version>4.4.0.1</telegrambots.version>
+        <postgres.version>42.2.6</postgres.version>
+        <h2.version>1.4.199</h2.version>
     </properties>
 
     <dependencies>
@@ -59,8 +61,15 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.2.6</version>
+            <version>${postgres.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

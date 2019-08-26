@@ -20,4 +20,9 @@ public class UserServiceImpl implements UserService {
     public void saveOfUpdate(CustomUser user) {
         userRepository.save(user);
     }
+
+    @Override
+    public CustomUser getById(int id) {
+        return userRepository.findById(id).get();
+    }
 }

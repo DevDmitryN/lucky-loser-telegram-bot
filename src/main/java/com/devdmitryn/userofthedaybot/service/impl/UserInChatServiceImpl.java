@@ -10,8 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.NoSuchElementException;
-
 @Service
 public class UserInChatServiceImpl implements UserInChatService {
 
@@ -30,12 +28,7 @@ public class UserInChatServiceImpl implements UserInChatService {
         chat.setId(chatId);
         CustomUser user = new CustomUser();
         user.setId(userId);
-        try{
-            return userInChatRepository.findByChatAndUser(chat,user).get();
-        }catch (NoSuchElementException e){
-            logger.warn(e.getMessage());
-        }
-        return null;
+        return userInChatRepository.findByChatAndUser(chat,user).get();
     }
 
     @Override

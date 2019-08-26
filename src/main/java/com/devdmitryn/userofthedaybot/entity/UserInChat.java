@@ -22,7 +22,7 @@ public class UserInChat {
     private CustomUser user;
     @Column(name = "lucky_counter")
     private int luckyCounter;
-    @Column(name = "looser_counter")
-    private int looserCounter;
+    @Column(name = "loser_counter")
+    private int loserCounter;
 
 }
