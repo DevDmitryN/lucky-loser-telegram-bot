@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Optional;
 
 import static junit.framework.TestCase.assertEquals;
@@ -32,7 +31,7 @@ public class UserRepositoryTest {
         user.setId(3);
         user.setFirstName("test first name");
         user.setLastName("test last name");
-        user.setUsername("test username");
+        user.setUserName("test userName");
     }
 
     @Test
@@ -43,7 +42,7 @@ public class UserRepositoryTest {
         assertEquals(user.getId(),userFromDb.get().getId());
         assertEquals(user.getFirstName(),userFromDb.get().getFirstName());
         assertEquals(user.getLastName(),userFromDb.get().getLastName());
-        assertEquals(user.getUsername(),userFromDb.get().getUsername());
+        assertEquals(user.getUserName(),userFromDb.get().getUserName());
     }
 
     @Test

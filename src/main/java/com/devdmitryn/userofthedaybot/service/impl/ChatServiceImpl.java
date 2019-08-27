@@ -27,7 +27,7 @@ public class ChatServiceImpl implements ChatService {
 
     @Override
     @Transactional
-    public CustomChat getById(int id) {
+    public CustomChat getById(long id) {
 //        try{
             CustomChat chat = chatRepository.findById(id).get();
             Hibernate.initialize(chat.getUsers());
@@ -39,7 +39,7 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
-    public void delete(int chatId) {
+    public void delete(long chatId) {
         CustomChat chat = new CustomChat();
         chat.setId(chatId);
         chatRepository.delete(chat);

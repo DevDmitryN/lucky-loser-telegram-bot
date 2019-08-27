@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PUBLIC,force = true)
 public class CustomChat {
     @Id
-    private Integer id;
+    private Long id;
     @ManyToOne
     @JoinColumn(name = "lucky_id")
     private CustomUser lucky;

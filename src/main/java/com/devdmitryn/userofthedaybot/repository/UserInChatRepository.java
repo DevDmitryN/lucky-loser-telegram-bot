@@ -11,5 +11,5 @@ import java.util.Optional;
 @Repository
 public interface UserInChatRepository extends CrudRepository<UserInChat, Long> {
     Optional<UserInChat> findByChatAndUser(CustomChat chat, CustomUser user);
-    Optional<UserInChat> findByChatIdAndUserId(int chatId, int userId);
+    Optional<UserInChat> findByChatIdAndUserId(long chatId, int userId);
 }

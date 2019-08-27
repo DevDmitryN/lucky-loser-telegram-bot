@@ -23,7 +23,7 @@ public class UserInChatServiceTest {
         CustomUser user = new CustomUser();
         user.setId(2);
         CustomChat chat = new CustomChat();
-        chat.setId(2);
+        chat.setId(2L);
         UserInChat userInChat = new UserInChat();
         userInChat.setUser(user);
         userInChat.setChat(chat);

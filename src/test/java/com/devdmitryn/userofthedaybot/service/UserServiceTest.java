@@ -1,7 +1,5 @@
 package com.devdmitryn.userofthedaybot.service;
 
-import com.devdmitryn.userofthedaybot.UserOfTheDayBotApplication;
-import com.devdmitryn.userofthedaybot.entity.CustomChat;
 import com.devdmitryn.userofthedaybot.entity.CustomUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +23,7 @@ public class UserServiceTest {
         user.setId(5);
         user.setFirstName("name1");
         user.setLastName("test");
-        user.setUsername("test");
+        user.setUserName("test");
         userService.saveOfUpdate(user);
         CustomUser savedUser = userService.getById(5);
         assertNotNull(savedUser);
@@ -34,7 +32,7 @@ public class UserServiceTest {
     public void getExistedByIdSuccessfully(){
 
         CustomUser user = userService.getById(1);
-        assertEquals("username1",user.getUsername());
+        assertEquals("username1",user.getUserName());
     }
     @Test
     public void getUserWithChats(){

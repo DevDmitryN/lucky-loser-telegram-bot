@@ -30,7 +30,7 @@ public class ChatServiceTest {
     @Test
     public void saveNewChatSuccessfully(){
         CustomChat chat = new CustomChat();
-        chat.setId(15232);
+        chat.setId(15232L);
         chatService.saveOrUpdate(chat);
         CustomChat test = chatService.getById(chat.getId());
         assertEquals(defaultLuckyTime,test.getLuckyTime());

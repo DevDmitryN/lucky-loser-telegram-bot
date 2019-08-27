@@ -26,7 +26,7 @@ public class ChatRepositoryTest {
     @Before
     public void createChat(){
         chat = new CustomChat();
-        chat.setId(1);
+        chat.setId(1L);
     }
 
     @Test

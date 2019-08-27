@@ -13,7 +13,7 @@ public class CustomUser {
     @Id
     private Integer id;
     @Column(name = "username")
-    private String username;
+    private String userName;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
@@ -26,5 +26,15 @@ public class CustomUser {
     private List<CustomChat> luckyChats;
     @OneToMany(mappedBy = "loser")
     private List<CustomChat> unluckyChats;
+
+    public String getNotNullName(){
+        if(userName != null){
+            return userName;
+        }
+        if(firstName != null){
+            return firstName;
+        }
+        return lastName;
+    }
 
 }

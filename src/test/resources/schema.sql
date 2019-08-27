@@ -16,7 +16,7 @@ CREATE TABLE telegram.users(
 );
 
 CREATE TABLE telegram.chats(
-    id INT NOT NULL,
+    id LONG NOT NULL,
     lucky_id INT,
     loser_id INT,
     lucky_time TIMESTAMP DEFAULT parsedatetime('21-06-1962 00:00:00','dd-MM-yyyy HH:mm:ss'),

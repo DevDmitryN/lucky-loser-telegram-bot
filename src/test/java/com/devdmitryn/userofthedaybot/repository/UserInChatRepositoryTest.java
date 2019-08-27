@@ -35,7 +35,7 @@ public class UserInChatRepositoryTest {
     }
 
 
-    public UserInChat saveUserInChat(int userId,int chatId){
+    public UserInChat saveUserInChat(int userId,long chatId){
         CustomChat chat = new CustomChat();
         chat.setId(chatId);
         CustomUser user = new CustomUser();

@@ -25,4 +25,9 @@ public class UserServiceImpl implements UserService {
     public CustomUser getById(int id) {
         return userRepository.findById(id).get();
     }
+
+    @Override
+    public boolean isExist(int id) {
+        return userRepository.findById(id).isPresent();
+    }
 }

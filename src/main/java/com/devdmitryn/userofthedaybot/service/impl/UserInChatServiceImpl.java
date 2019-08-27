@@ -23,7 +23,7 @@ public class UserInChatServiceImpl implements UserInChatService {
     }
 
     @Override
-    public UserInChat getByChatIdAndUserId(int chatId, int userId) {
+    public UserInChat getByChatIdAndUserId(long chatId, int userId) {
         CustomChat chat = new CustomChat();
         chat.setId(chatId);
         CustomUser user = new CustomUser();
@@ -36,5 +36,10 @@ public class UserInChatServiceImpl implements UserInChatService {
         UserInChat userInChat = new UserInChat();
         userInChat.setId(id);
         userInChatRepository.delete(userInChat);
+    }
+
+    @Override
+    public boolean isExist(long chatId, int userId) {
+        return userInChatRepository.findByChatIdAndUserId(chatId,userId).isPresent();
     }
 }
