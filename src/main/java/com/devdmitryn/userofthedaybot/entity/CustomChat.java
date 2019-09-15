@@ -32,12 +32,12 @@ public class CustomChat {
     @PrePersist
     private void setDefaultValues(){
         if(luckyTime == null){
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-            luckyTime = LocalDateTime.parse("21-06-1962 00:00:00",formatter);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            luckyTime = LocalDateTime.parse("1962-06-21 00:00:00",formatter);
         }
         if(loserTime == null){
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-            loserTime = LocalDateTime.parse("26-12-1991 00:00:00",formatter);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            loserTime = LocalDateTime.parse("1991-12-26 00:00:00",formatter);
         }
     }
 

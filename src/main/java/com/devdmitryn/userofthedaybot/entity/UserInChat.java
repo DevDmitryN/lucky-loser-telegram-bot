@@ -25,4 +25,11 @@ public class UserInChat {
     @Column(name = "loser_counter")
     private int loserCounter;
 
+    public void incrementLuckyCounter(){
+        luckyCounter++;
+    }
+    public void incrementLoserCounter(){
+        loserCounter++;
+    }
+
 }

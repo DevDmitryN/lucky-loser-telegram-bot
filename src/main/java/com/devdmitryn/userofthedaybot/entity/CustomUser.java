@@ -1,7 +1,8 @@
 package com.devdmitryn.userofthedaybot.entity;
 
-import lombok.*;
-import org.checkerframework.checker.units.qual.C;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;

@@ -6,6 +6,6 @@ INSERT INTO telegram.users(id,username,first_name,last_name) VALUES
 INSERT INTO telegram.chats(id) VALUES
     (1),(2);
 
-INSERT INTO telegram.chat_user(chat_id,user_id) VALUES
-    (1,1),(1,2),(1,3),
-    (2,1),(2,3);
+INSERT INTO telegram.chat_user(chat_id,user_id,lucky_counter,loser_counter) VALUES
+    (1,1,1,2),(1,2,4,1),(1,3,2,2),
+    (2,1,4,2),(2,3,3,3);

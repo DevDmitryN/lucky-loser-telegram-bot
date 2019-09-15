@@ -37,4 +37,5 @@ public class UserInChatServiceTest {
         userInChatService.delete(1);
         userInChatService.getByChatIdAndUserId(1,1);
     }
+
 }

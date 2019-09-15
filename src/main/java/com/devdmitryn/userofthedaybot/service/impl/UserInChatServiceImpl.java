@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserInChatServiceImpl implements UserInChatService {
 
@@ -42,4 +44,16 @@ public class UserInChatServiceImpl implements UserInChatService {
     public boolean isExist(long chatId, int userId) {
         return userInChatRepository.findByChatIdAndUserId(chatId,userId).isPresent();
     }
+
+    @Override
+    public List<UserInChat> getByChatIdOrderByLuckyCounter(long chatId) {
+        return userInChatRepository.findAllByChatIdOrderByLuckyCounterDesc(chatId);
+    }
+
+    @Override
+    public List<UserInChat> getByChatIdOrderByLoserCounter(long chatId) {
+        return userInChatRepository.findAllByChatIdOrderByLoserCounterDesc(chatId);
+    }
+
+
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.*;
@@ -48,13 +49,27 @@ public class UserInChatRepositoryTest {
 
     @Test
     public void getByChatAndUserSuccessfully(){
-//        CustomChat chat = new CustomChat();
-//        chat.setId(1);
-//        CustomUser user = new CustomUser();
-//        user.setId(1);
-//        Optional<UserInChat> userInChat = userInChatRepository.findByChatAndUser(chat,user);
         Optional<UserInChat> userInChat = userInChatRepository.findByChatIdAndUserId(1,1);
         assertTrue(userInChat.isPresent());
+    }
+
+    @Test
+    public void getByChatIdOrderByLuckyCounterDescSuccessfully(){
+        List<UserInChat> usersInChat = userInChatRepository.findAllByChatIdOrderByLuckyCounterDesc(1L);
+        assertNotNull(usersInChat);
+        assertNotEquals(0,usersInChat.size());
+        assertEquals(4,usersInChat.get(0).getLuckyCounter());
+        assertEquals(2,usersInChat.get(1).getLuckyCounter());
+        assertEquals(1,usersInChat.get(2).getLuckyCounter());
+    }
+
+    @Test
+    public void getByChatIdOrderByLoserCounterDescSuccessfully(){
+        List<UserInChat> usersInChat = userInChatRepository.findAllByChatIdOrderByLoserCounterDesc(2L);
+        assertNotNull(usersInChat);
+        assertNotEquals(0,usersInChat.size());
+        assertEquals(3,usersInChat.get(0).getLoserCounter());
+        assertEquals(2,usersInChat.get(1).getLoserCounter());
     }
 
 }

@@ -28,14 +28,9 @@ public class ChatServiceImpl implements ChatService {
     @Override
     @Transactional
     public CustomChat getById(long id) {
-//        try{
-            CustomChat chat = chatRepository.findById(id).get();
-            Hibernate.initialize(chat.getUsers());
-            return chat;
-//        }catch (NoSuchElementException e){
-//            logger.warn(e.getMessage());
-//        }
-//        return null;
+        CustomChat chat = chatRepository.findById(id).get();
+        Hibernate.initialize(chat.getUsers());
+        return chat;
     }
 
     @Override
@@ -43,5 +38,15 @@ public class ChatServiceImpl implements ChatService {
         CustomChat chat = new CustomChat();
         chat.setId(chatId);
         chatRepository.delete(chat);
+    }
+
+    @Override
+    public boolean isAllowedToUpdateLucky(CustomChat chat) {
+        return false;
+    }
+
+    @Override
+    public boolean isAllowedToUpdateLoser(CustomChat chat) {
+        return false;
     }
 }

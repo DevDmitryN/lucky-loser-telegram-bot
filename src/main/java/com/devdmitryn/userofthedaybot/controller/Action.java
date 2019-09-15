@@ -1,8 +1,8 @@
-package com.devdmitryn.userofthedaybot.resolver;
+package com.devdmitryn.userofthedaybot.controller;
 
 public enum Action {
-    RUN_LUCKY,
-    RUN_LOSER,
+    FIND_LUCKY,
+    FIND_LOSER,
     LUCKY_STATISTIC,
     LOSER_STATISTIC,
     RESTART,
